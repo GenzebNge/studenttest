@@ -42,6 +42,7 @@ public class HomeController {
     @RequestMapping("/studenttestform")
     public String testform(Model model){
         model.addAttribute("studetTest", new StudentTest());
+        model.addAttribute("students", studentRepository.findAll());
         return "studenttestform";
     }
 
