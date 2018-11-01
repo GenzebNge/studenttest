@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="showlist"> List of Students with their corosponding coures</a>
+
+<div th:each="student:${students}">
+
+    <h6 th:text="${student.firstName}"></h6>
+    <h6 th:text="${student.lastName}"> </h6>
+    <h6 th:text="${student.major}"></h6>
+       <ul>
+           <th:block th:each="studentTest : ${tests}">
+               <li th:inline="text"><b> [[${studentTest.subject}]]</b>[[${studentTest.date}]]</li>
+           </th:block>
+       </ul>
+
+</div>
+</body>
+</html>

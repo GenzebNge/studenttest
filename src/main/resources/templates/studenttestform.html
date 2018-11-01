@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/processstudenttestform}" th:object="${studetTest}" method="post">
+    <input tpye="hidden" th:field="*{id}" />
+    StudentId:   <select th:field="*{student.id}">
+    <option th:value="${student.id}" th:each="student:${students}">[[${student.firstName}]]</option>
+    <br />
+
+</select>
+
+    Subject: <input type="text" th:field="*{subject}" />
+    <span th:if="${#fields.hasErrors('subject')}" th:errors="*{subject}"></span><br/>
+    Date: <input type="text" th:field="*{date}" />
+    <span th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></span><br/>
+    Score: <input type="text" th:field="*{score}" />
+    <span th:if="${#fields.hasErrors('score')}" th:errors="*{score}"></span><br/>
+
+
+
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
