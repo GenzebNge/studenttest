@@ -61,4 +61,5 @@ public class HomeController {
         model.addAttribute("tests", studentTestRepository.findAll());
         return "showlist";
     }
+
 }

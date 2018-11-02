@@ -8,7 +8,8 @@
 
 <form action="#" th:action="@{/processstudenttestform}" th:object="${studetTest}" method="post">
     <input tpye="hidden" th:field="*{id}" />
-    StudentId:   <select th:field="*{student.id}">
+
+    StudentId:  <select th:field="*{student.id}">
     <option th:value="${student.id}" th:each="student:${students}">[[${student.firstName}]]</option>
     <br />
 
